@@ -27,3 +27,10 @@
 **Commit**: Add configuration singleton with environment variable resolution
 **Acceptance**: 9/9 criteria met
 **Verification**: tests FAIL on previous state (ModuleNotFoundError), PASS on current state
+
+## Round 5
+**Task**: Task 5 — Implement thread-safe download queue
+**Files created**: bookdl/core/queue.py, tests/test_queue.py
+**Commit**: Add thread-safe download queue with priority support
+**Acceptance**: 11/11 criteria met
+**Verification**: tests FAIL on previous state (ModuleNotFoundError), PASS on current state

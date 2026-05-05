@@ -68,14 +68,26 @@
 ## Task 5: Download Queue
 
 ### Acceptance Criteria
-- [ ] BookQueue.add() adds download task to queue, returns False if already exists
-- [ ] BookQueue.get_next() returns next task_id with cancellation flag
-- [ ] BookQueue respects priority ordering (lower priority number processed first)
-- [ ] BookQueue.update_status() updates task status and timestamp
-- [ ] BookQueue.cancel() sets cancellation flag for task
-- [ ] BookQueue.get_status() returns current status of task
-- [ ] BookQueue.get_task() returns task data by id
-- [ ] BookQueue.get_all_statuses() returns dict of all task statuses
-- [ ] Terminal statuses (COMPLETE, ERROR, CANCELLED) are tracked correctly
-- [ ] Stale tasks are cleaned up after timeout
-- [ ] Thread-safety: concurrent operations don't corrupt state
+- [x] BookQueue.add() adds download task to queue, returns False if already exists
+- [x] BookQueue.get_next() returns next task_id with cancellation flag
+- [x] BookQueue respects priority ordering (lower priority number processed first)
+- [x] BookQueue.update_status() updates task status and timestamp
+- [x] BookQueue.cancel() sets cancellation flag for task
+- [x] BookQueue.get_status() returns current status of task
+- [x] BookQueue.get_task() returns task data by id
+- [x] BookQueue.get_all_statuses() returns dict of all task statuses
+- [x] Terminal statuses (COMPLETE, ERROR, CANCELLED) are tracked correctly
+- [x] Stale tasks are cleaned up after timeout
+- [x] Thread-safety: concurrent operations don't corrupt state
+
+## Task 6: Metadata Provider Plugin System
+
+### Acceptance Criteria
+- [ ] BookMetadata dataclass holds book info: provider, provider_id, title, authors, isbn, cover_url, etc.
+- [ ] SearchOptions dataclass holds query, language, limit, page parameters
+- [ ] SearchResult dataclass holds list of books, page, total_found, has_more
+- [ ] MetadataProvider abstract class defines search() method signature
+- [ ] ProviderRegistry.register() adds provider by name
+- [ ] ProviderRegistry.get() retrieves provider by name
+- [ ] ProviderRegistry.list() returns all registered provider names
+- [ ] ProviderRegistry.search_all() searches across all providers
