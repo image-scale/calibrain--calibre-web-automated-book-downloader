@@ -140,13 +140,26 @@
 ## Task 10: Torznab XML Parser
 
 ### Acceptance Criteria
-- [ ] parse_torznab_xml() parses valid Torznab/Newznab XML response
-- [ ] parse_torznab_xml() extracts title, guid, download_url, info_url from items
-- [ ] parse_torznab_xml() extracts size as integer from size element
-- [ ] parse_torznab_xml() determines protocol (torrent/usenet) from enclosure type
-- [ ] parse_torznab_xml() extracts seeders, leechers from torznab:attr elements
-- [ ] parse_torznab_xml() extracts author, booktitle from torznab:attr elements
-- [ ] parse_torznab_xml() extracts indexer name and ID from prowlarrindexer element
-- [ ] parse_torznab_xml() returns empty list for empty/invalid XML
-- [ ] parse_torznab_xml() uses defusedxml for XXE protection
-- [ ] Helper functions coerce_int/coerce_float handle None/empty/invalid values
+- [x] parse_torznab_xml() parses valid Torznab/Newznab XML response
+- [x] parse_torznab_xml() extracts title, guid, download_url, info_url from items
+- [x] parse_torznab_xml() extracts size as integer from size element
+- [x] parse_torznab_xml() determines protocol (torrent/usenet) from enclosure type
+- [x] parse_torznab_xml() extracts seeders, leechers from torznab:attr elements
+- [x] parse_torznab_xml() extracts author, booktitle from torznab:attr elements
+- [x] parse_torznab_xml() extracts indexer name and ID from prowlarrindexer element
+- [x] parse_torznab_xml() returns empty list for empty/invalid XML
+- [x] parse_torznab_xml() uses defusedxml for XXE protection
+- [x] Helper functions coerce_int/coerce_float handle None/empty/invalid values
+
+## Task 11: Download Client Plugin System
+
+### Acceptance Criteria
+- [ ] DownloadState enum defines DOWNLOADING, COMPLETE, ERROR, SEEDING, PAUSED, QUEUED states
+- [ ] DownloadStatus dataclass holds progress, state, message, complete, file_path fields
+- [ ] DownloadStatus.error() factory method creates error status
+- [ ] DownloadClient abstract class defines protocol, name attributes
+- [ ] DownloadClient defines test_connection(), add_download(), get_status(), remove() methods
+- [ ] ClientRegistry.register() adds client by protocol
+- [ ] ClientRegistry.get_client() returns configured client for protocol
+- [ ] ClientRegistry.list_protocols() returns protocols with configured clients
+- [ ] with_retry decorator retries on connection/timeout errors with exponential backoff

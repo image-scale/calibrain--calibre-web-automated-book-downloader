@@ -62,3 +62,10 @@
 **Commit**: Add Prowlarr release cache for storing release data between operations
 **Acceptance**: 9/9 criteria met
 **Verification**: tests FAIL on previous state (ModuleNotFoundError), PASS on current state
+
+## Round 10
+**Task**: Task 10 — Implement Torznab XML parser
+**Files created**: bookdl/prowlarr/torznab.py, tests/test_torznab.py
+**Commit**: Add Torznab XML parser with XXE protection for parsing search results
+**Acceptance**: 10/10 criteria met
+**Verification**: tests FAIL on previous state (ModuleNotFoundError), PASS on current state
