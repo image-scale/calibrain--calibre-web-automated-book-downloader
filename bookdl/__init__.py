@@ -1,0 +1,1 @@
+"""Book downloader core package."""

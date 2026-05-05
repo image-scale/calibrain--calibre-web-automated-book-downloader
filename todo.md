@@ -4,7 +4,7 @@
 Start with core user-facing functionality (book metadata search, download queue, file naming), then add supporting infrastructure (configuration, caching, providers). Build the Flask web API last to integrate all components. Focus on delivering end-to-end book search and download capability.
 
 ## Tasks
-- [ ] Task 1: Implement core data models for download tasks, queue items, and search filters with proper status tracking and filename generation (models.py + test_models.py)
+- [>] Task 1: Implement core data models for download tasks, queue items, and search filters with proper status tracking and filename generation (models.py + test_models.py)
 - [ ] Task 2: Implement template-based file naming system that parses templates with conditional placeholders, sanitizes filenames, and builds library paths from metadata (naming.py + test_naming.py)
 - [ ] Task 3: Implement thread-safe in-memory cache with TTL support, expiration cleanup, and cacheable decorator for function memoization (cache.py + test_cache.py)
 - [ ] Task 4: Implement configuration singleton that resolves settings from environment variables with type coercion and default fallbacks (config.py + test_config.py)
