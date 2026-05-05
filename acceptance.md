@@ -127,12 +127,26 @@
 ## Task 9: Prowlarr Release Cache
 
 ### Acceptance Criteria
-- [ ] cache_release() stores release data with timestamp
-- [ ] get_release() returns cached release if not expired
-- [ ] get_release() returns None for expired entries
-- [ ] get_release() returns None for non-existent entries
-- [ ] remove_release() removes entry from cache
-- [ ] cleanup_expired() removes all expired entries and returns count
-- [ ] get_cache_stats() returns cache size and entry keys
-- [ ] Default TTL is 3600 seconds (1 hour)
-- [ ] Thread-safety: concurrent access does not corrupt cache state
+- [x] cache_release() stores release data with timestamp
+- [x] get_release() returns cached release if not expired
+- [x] get_release() returns None for expired entries
+- [x] get_release() returns None for non-existent entries
+- [x] remove_release() removes entry from cache
+- [x] cleanup_expired() removes all expired entries and returns count
+- [x] get_cache_stats() returns cache size and entry keys
+- [x] Default TTL is 3600 seconds (1 hour)
+- [x] Thread-safety: concurrent access does not corrupt cache state
+
+## Task 10: Torznab XML Parser
+
+### Acceptance Criteria
+- [ ] parse_torznab_xml() parses valid Torznab/Newznab XML response
+- [ ] parse_torznab_xml() extracts title, guid, download_url, info_url from items
+- [ ] parse_torznab_xml() extracts size as integer from size element
+- [ ] parse_torznab_xml() determines protocol (torrent/usenet) from enclosure type
+- [ ] parse_torznab_xml() extracts seeders, leechers from torznab:attr elements
+- [ ] parse_torznab_xml() extracts author, booktitle from torznab:attr elements
+- [ ] parse_torznab_xml() extracts indexer name and ID from prowlarrindexer element
+- [ ] parse_torznab_xml() returns empty list for empty/invalid XML
+- [ ] parse_torznab_xml() uses defusedxml for XXE protection
+- [ ] Helper functions coerce_int/coerce_float handle None/empty/invalid values
