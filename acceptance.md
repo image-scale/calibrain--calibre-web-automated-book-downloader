@@ -83,11 +83,27 @@
 ## Task 6: Metadata Provider Plugin System
 
 ### Acceptance Criteria
-- [ ] BookMetadata dataclass holds book info: provider, provider_id, title, authors, isbn, cover_url, etc.
-- [ ] SearchOptions dataclass holds query, language, limit, page parameters
-- [ ] SearchResult dataclass holds list of books, page, total_found, has_more
-- [ ] MetadataProvider abstract class defines search() method signature
-- [ ] ProviderRegistry.register() adds provider by name
-- [ ] ProviderRegistry.get() retrieves provider by name
-- [ ] ProviderRegistry.list() returns all registered provider names
-- [ ] ProviderRegistry.search_all() searches across all providers
+- [x] BookMetadata dataclass holds book info: provider, provider_id, title, authors, isbn, cover_url, etc.
+- [x] SearchOptions dataclass holds query, language, limit, page parameters
+- [x] SearchResult dataclass holds list of books, page, total_found, has_more
+- [x] MetadataProvider abstract class defines search() method signature
+- [x] ProviderRegistry.register() adds provider by name
+- [x] ProviderRegistry.get() retrieves provider by name
+- [x] ProviderRegistry.list_names() returns all registered provider names
+- [x] ProviderRegistry.search_all() searches across all providers
+
+## Task 7: Open Library Metadata Provider
+
+### Acceptance Criteria
+- [ ] OpenLibraryProvider implements MetadataProvider interface
+- [ ] OpenLibraryProvider.name returns "openlibrary"
+- [ ] OpenLibraryProvider.display_name returns "Open Library"
+- [ ] search() queries Open Library Search API with query string
+- [ ] search() parses JSON response into BookMetadata objects
+- [ ] search() extracts title, authors, ISBN, cover URL, publish year from response
+- [ ] search() respects limit parameter for result count
+- [ ] search() supports pagination via page parameter
+- [ ] search() handles API errors gracefully (returns empty result)
+- [ ] search() handles malformed/missing fields without crashing
+- [ ] get_by_id() retrieves specific work by Open Library work ID
+- [ ] Cover URLs are constructed from cover_i field when available
