@@ -38,16 +38,29 @@
 ## Task 3: Thread-safe Cache with TTL
 
 ### Acceptance Criteria
-- [ ] CacheService.get() returns cached value if not expired
-- [ ] CacheService.get() returns None for expired entries and removes them
-- [ ] CacheService.set() stores value with TTL in seconds
-- [ ] CacheService.set() evicts oldest entries when at max_size capacity
-- [ ] CacheService.invalidate() removes specific cache entry by key
-- [ ] CacheService.invalidate_prefix() removes all entries with matching key prefix
-- [ ] CacheService.clear() removes all entries
-- [ ] CacheService.cleanup_expired() removes all expired entries and returns count
-- [ ] CacheService.stats() returns current size and max_size
-- [ ] cache_key() generates unique key from arguments and kwargs
-- [ ] @cacheable decorator memoizes function results with configurable TTL
-- [ ] @cacheable decorator skips cache for None results
-- [ ] Thread-safety: concurrent access does not corrupt cache state
+- [x] CacheService.get() returns cached value if not expired
+- [x] CacheService.get() returns None for expired entries and removes them
+- [x] CacheService.set() stores value with TTL in seconds
+- [x] CacheService.set() evicts oldest entries when at max_size capacity
+- [x] CacheService.invalidate() removes specific cache entry by key
+- [x] CacheService.invalidate_prefix() removes all entries with matching key prefix
+- [x] CacheService.clear() removes all entries
+- [x] CacheService.cleanup_expired() removes all expired entries and returns count
+- [x] CacheService.stats() returns current size and max_size
+- [x] cache_key() generates unique key from arguments and kwargs
+- [x] @cacheable decorator memoizes function results with configurable TTL
+- [x] @cacheable decorator skips cache for None results
+- [x] Thread-safety: concurrent access does not corrupt cache state
+
+## Task 4: Configuration Singleton
+
+### Acceptance Criteria
+- [ ] Config.get() retrieves setting value with optional default
+- [ ] Config.get() reads from environment variables first
+- [ ] Config.get() falls back to default when env var not set
+- [ ] Config.set() stores configuration values
+- [ ] Boolean values are coerced from strings ("true", "1", "yes" -> True)
+- [ ] Integer values are coerced from strings
+- [ ] Config is a thread-safe singleton
+- [ ] Config.refresh() reloads settings from environment
+- [ ] Common settings have sensible defaults (FLASK_PORT=8084, etc.)

@@ -13,3 +13,10 @@
 **Commit**: Add template-based file naming system for organizing downloaded books
 **Acceptance**: 12/12 criteria met
 **Verification**: tests FAIL on previous state (ModuleNotFoundError), PASS on current state
+
+## Round 3
+**Task**: Task 3 — Implement thread-safe in-memory cache with TTL
+**Files created**: bookdl/core/cache.py, tests/test_cache.py
+**Commit**: Add thread-safe in-memory cache with TTL support
+**Acceptance**: 13/13 criteria met
+**Verification**: tests FAIL on previous state (ModuleNotFoundError), PASS on current state
