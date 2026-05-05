@@ -95,15 +95,31 @@
 ## Task 7: Open Library Metadata Provider
 
 ### Acceptance Criteria
-- [ ] OpenLibraryProvider implements MetadataProvider interface
-- [ ] OpenLibraryProvider.name returns "openlibrary"
-- [ ] OpenLibraryProvider.display_name returns "Open Library"
-- [ ] search() queries Open Library Search API with query string
-- [ ] search() parses JSON response into BookMetadata objects
-- [ ] search() extracts title, authors, ISBN, cover URL, publish year from response
-- [ ] search() respects limit parameter for result count
-- [ ] search() supports pagination via page parameter
-- [ ] search() handles API errors gracefully (returns empty result)
-- [ ] search() handles malformed/missing fields without crashing
-- [ ] get_by_id() retrieves specific work by Open Library work ID
-- [ ] Cover URLs are constructed from cover_i field when available
+- [x] OpenLibraryProvider implements MetadataProvider interface
+- [x] OpenLibraryProvider.name returns "openlibrary"
+- [x] OpenLibraryProvider.display_name returns "Open Library"
+- [x] search() queries Open Library Search API with query string
+- [x] search() parses JSON response into BookMetadata objects
+- [x] search() extracts title, authors, ISBN, cover URL, publish year from response
+- [x] search() respects limit parameter for result count
+- [x] search() supports pagination via page parameter
+- [x] search() handles API errors gracefully (returns empty result)
+- [x] search() handles malformed/missing fields without crashing
+- [x] get_by_id() retrieves specific work by Open Library work ID
+- [x] Cover URLs are constructed from cover_i field when available
+
+## Task 8: Release Source Plugin System
+
+### Acceptance Criteria
+- [ ] ReleaseProtocol enum defines HTTP, TORRENT, NZB protocol types
+- [ ] Release dataclass holds source, source_id, title, format, language, size, size_bytes, download_url, protocol, etc.
+- [ ] ReleaseSource abstract class defines name, display_name, search() method signature
+- [ ] SourceRegistry.register() adds source by name
+- [ ] SourceRegistry.get() retrieves source by name
+- [ ] SourceRegistry.list_names() returns all registered source names
+- [ ] SourceRegistry.list_sources() returns all source instances with availability info
+- [ ] ColumnRenderType enum defines TEXT, BADGE, SIZE, NUMBER render types
+- [ ] ColumnSchema dataclass holds key, label, render_type, align, width configuration
+- [ ] ReleaseColumnConfig dataclass holds columns list and grid_template
+- [ ] serialize_column_config() converts config to dict for API response
+- [ ] default_column_config() returns sensible default column layout
