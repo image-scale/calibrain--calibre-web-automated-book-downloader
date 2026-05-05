@@ -111,15 +111,28 @@
 ## Task 8: Release Source Plugin System
 
 ### Acceptance Criteria
-- [ ] ReleaseProtocol enum defines HTTP, TORRENT, NZB protocol types
-- [ ] Release dataclass holds source, source_id, title, format, language, size, size_bytes, download_url, protocol, etc.
-- [ ] ReleaseSource abstract class defines name, display_name, search() method signature
-- [ ] SourceRegistry.register() adds source by name
-- [ ] SourceRegistry.get() retrieves source by name
-- [ ] SourceRegistry.list_names() returns all registered source names
-- [ ] SourceRegistry.list_sources() returns all source instances with availability info
-- [ ] ColumnRenderType enum defines TEXT, BADGE, SIZE, NUMBER render types
-- [ ] ColumnSchema dataclass holds key, label, render_type, align, width configuration
-- [ ] ReleaseColumnConfig dataclass holds columns list and grid_template
-- [ ] serialize_column_config() converts config to dict for API response
-- [ ] default_column_config() returns sensible default column layout
+- [x] ReleaseProtocol enum defines HTTP, TORRENT, NZB protocol types
+- [x] Release dataclass holds source, source_id, title, format, language, size, size_bytes, download_url, protocol, etc.
+- [x] ReleaseSource abstract class defines name, display_name, search() method signature
+- [x] SourceRegistry.register() adds source by name
+- [x] SourceRegistry.get() retrieves source by name
+- [x] SourceRegistry.list_names() returns all registered source names
+- [x] SourceRegistry.list_sources() returns all source instances with availability info
+- [x] ColumnRenderType enum defines TEXT, BADGE, SIZE, NUMBER render types
+- [x] ColumnSchema dataclass holds key, label, render_type, align, width configuration
+- [x] ReleaseColumnConfig dataclass holds columns list and grid_template
+- [x] serialize_column_config() converts config to dict for API response
+- [x] default_column_config() returns sensible default column layout
+
+## Task 9: Prowlarr Release Cache
+
+### Acceptance Criteria
+- [ ] cache_release() stores release data with timestamp
+- [ ] get_release() returns cached release if not expired
+- [ ] get_release() returns None for expired entries
+- [ ] get_release() returns None for non-existent entries
+- [ ] remove_release() removes entry from cache
+- [ ] cleanup_expired() removes all expired entries and returns count
+- [ ] get_cache_stats() returns cache size and entry keys
+- [ ] Default TTL is 3600 seconds (1 hour)
+- [ ] Thread-safety: concurrent access does not corrupt cache state
