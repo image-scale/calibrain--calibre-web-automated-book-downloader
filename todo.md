@@ -5,8 +5,8 @@ Start with core user-facing functionality (book metadata search, download queue,
 
 ## Tasks
 - [x] Task 1: Implement core data models for download tasks, queue items, and search filters with proper status tracking and filename generation (models.py + test_models.py)
-- [>] Task 2: Implement template-based file naming system that parses templates with conditional placeholders, sanitizes filenames, and builds library paths from metadata (naming.py + test_naming.py)
-- [ ] Task 3: Implement thread-safe in-memory cache with TTL support, expiration cleanup, and cacheable decorator for function memoization (cache.py + test_cache.py)
+- [x] Task 2: Implement template-based file naming system that parses templates with conditional placeholders, sanitizes filenames, and builds library paths from metadata (naming.py + test_naming.py)
+- [>] Task 3: Implement thread-safe in-memory cache with TTL support, expiration cleanup, and cacheable decorator for function memoization (cache.py + test_cache.py)
 - [ ] Task 4: Implement configuration singleton that resolves settings from environment variables with type coercion and default fallbacks (config.py + test_config.py)
 - [ ] Task 5: Implement thread-safe download queue with priority support, cancellation flags, and status tracking with timeout cleanup (queue.py + test_queue.py)
 - [ ] Task 6: Implement metadata provider plugin system with BookMetadata dataclass, search interfaces, and provider registry for extensibility (metadata_providers/__init__.py + test_metadata_providers.py)

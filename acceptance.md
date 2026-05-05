@@ -22,15 +22,32 @@
 ## Task 2: Template-based File Naming
 
 ### Acceptance Criteria
-- [ ] parse_naming_template() substitutes {Author}, {Title}, {Year}, {Series}, {SeriesPosition} placeholders
-- [ ] parse_naming_template() supports conditional placeholders like {Series/} that include suffix only when value exists
-- [ ] parse_naming_template() supports conditional prefix like { - Subtitle} that includes prefix only when value exists
-- [ ] sanitize_filename() replaces invalid characters (\\/:*?"<>|) with underscores
-- [ ] sanitize_filename() collapses multiple underscores and trims whitespace/dots
-- [ ] sanitize_filename() truncates to max_length (default 245)
-- [ ] format_series_position() formats float as integer when whole number (e.g., 2.0 -> "2")
-- [ ] derive_primary_title() extracts title without subtitle suffix when possible
-- [ ] natural_sort_key() pads numbers for correct sorting (Part 2 < Part 10)
-- [ ] assign_part_numbers() assigns sequential part numbers to sorted file list
-- [ ] build_library_path() combines base path, template, and metadata into a full path
-- [ ] build_library_path() prevents path traversal attacks
+- [x] parse_naming_template() substitutes {Author}, {Title}, {Year}, {Series}, {SeriesPosition} placeholders
+- [x] parse_naming_template() supports conditional placeholders like {Series/} that include suffix only when value exists
+- [x] parse_naming_template() supports conditional prefix like { - Subtitle} that includes prefix only when value exists
+- [x] sanitize_filename() replaces invalid characters (\\/:*?"<>|) with underscores
+- [x] sanitize_filename() collapses multiple underscores and trims whitespace/dots
+- [x] sanitize_filename() truncates to max_length (default 245)
+- [x] format_series_position() formats float as integer when whole number (e.g., 2.0 -> "2")
+- [x] derive_primary_title() extracts title without subtitle suffix when possible
+- [x] natural_sort_key() pads numbers for correct sorting (Part 2 < Part 10)
+- [x] assign_part_numbers() assigns sequential part numbers to sorted file list
+- [x] build_library_path() combines base path, template, and metadata into a full path
+- [x] build_library_path() prevents path traversal by removing ".." sequences
+
+## Task 3: Thread-safe Cache with TTL
+
+### Acceptance Criteria
+- [ ] CacheService.get() returns cached value if not expired
+- [ ] CacheService.get() returns None for expired entries and removes them
+- [ ] CacheService.set() stores value with TTL in seconds
+- [ ] CacheService.set() evicts oldest entries when at max_size capacity
+- [ ] CacheService.invalidate() removes specific cache entry by key
+- [ ] CacheService.invalidate_prefix() removes all entries with matching key prefix
+- [ ] CacheService.clear() removes all entries
+- [ ] CacheService.cleanup_expired() removes all expired entries and returns count
+- [ ] CacheService.stats() returns current size and max_size
+- [ ] cache_key() generates unique key from arguments and kwargs
+- [ ] @cacheable decorator memoizes function results with configurable TTL
+- [ ] @cacheable decorator skips cache for None results
+- [ ] Thread-safety: concurrent access does not corrupt cache state
