@@ -55,12 +55,27 @@
 ## Task 4: Configuration Singleton
 
 ### Acceptance Criteria
-- [ ] Config.get() retrieves setting value with optional default
-- [ ] Config.get() reads from environment variables first
-- [ ] Config.get() falls back to default when env var not set
-- [ ] Config.set() stores configuration values
-- [ ] Boolean values are coerced from strings ("true", "1", "yes" -> True)
-- [ ] Integer values are coerced from strings
-- [ ] Config is a thread-safe singleton
-- [ ] Config.refresh() reloads settings from environment
-- [ ] Common settings have sensible defaults (FLASK_PORT=8084, etc.)
+- [x] Config.get() retrieves setting value with optional default
+- [x] Config.get() reads from environment variables first
+- [x] Config.get() falls back to default when env var not set
+- [x] Config.set() stores configuration values
+- [x] Boolean values are coerced from strings ("true", "1", "yes" -> True)
+- [x] Integer values are coerced from strings
+- [x] Config is a thread-safe singleton
+- [x] Config.refresh() reloads settings from environment
+- [x] Common settings have sensible defaults (FLASK_PORT=8084, etc.)
+
+## Task 5: Download Queue
+
+### Acceptance Criteria
+- [ ] BookQueue.add() adds download task to queue, returns False if already exists
+- [ ] BookQueue.get_next() returns next task_id with cancellation flag
+- [ ] BookQueue respects priority ordering (lower priority number processed first)
+- [ ] BookQueue.update_status() updates task status and timestamp
+- [ ] BookQueue.cancel() sets cancellation flag for task
+- [ ] BookQueue.get_status() returns current status of task
+- [ ] BookQueue.get_task() returns task data by id
+- [ ] BookQueue.get_all_statuses() returns dict of all task statuses
+- [ ] Terminal statuses (COMPLETE, ERROR, CANCELLED) are tracked correctly
+- [ ] Stale tasks are cleaned up after timeout
+- [ ] Thread-safety: concurrent operations don't corrupt state

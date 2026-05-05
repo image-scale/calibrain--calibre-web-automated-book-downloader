@@ -20,3 +20,10 @@
 **Commit**: Add thread-safe in-memory cache with TTL support
 **Acceptance**: 13/13 criteria met
 **Verification**: tests FAIL on previous state (ModuleNotFoundError), PASS on current state
+
+## Round 4
+**Task**: Task 4 — Implement configuration singleton
+**Files created**: bookdl/core/config.py, tests/test_config.py
+**Commit**: Add configuration singleton with environment variable resolution
+**Acceptance**: 9/9 criteria met
+**Verification**: tests FAIL on previous state (ModuleNotFoundError), PASS on current state
